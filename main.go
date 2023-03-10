@@ -41,6 +41,7 @@ func createNewDesc(catalog, description string, value interface{}) *prometheus.D
 	fqName = strings.Replace(fqName, "-", "_", -1)
 	fqName = strings.Replace(fqName, "(", "", -1)
 	fqName = strings.Replace(fqName, ")", "", -1)
+	fqName = strings.Replace(fqName, "/", "_", -1)
 	fqName = "sensor_" + fqName + unit
 
 	log.Print(fqName, help, variableLabels, constLabels)
